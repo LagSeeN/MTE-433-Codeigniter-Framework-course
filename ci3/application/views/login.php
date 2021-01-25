@@ -41,25 +41,26 @@
 									<div class="text-center">
 										<h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
 									</div>
-                                    <?php 
+									<?php 
                                     $attr = array('id'=>'frmlogin','name'=>'frmlogin','class'=>'user');
                                     echo form_open('User/login', $attr); 
                                     ?>
-									
-										<div class="form-group">
-											<?php 
+
+									<div class="form-group">
+										<?php 
                                                 $attr = array(
                                                     'class' => "form-control form-control-user",
                                                     'placeholder' => 'รหัสผู้ใช้งาน',
                                                     'autocomplete'=>'off',
                                                     'name' => "username",
-                                                    'id' => 'username',
+													'id' => 'username',
+													'value' => set_value("username")?set_value("username"):'',
                                                 );
                                                 echo form_input($attr);
                                             ?>
-										</div>
-										<div class="form-group">
-											<?php 
+									</div>
+									<div class="form-group">
+										<?php 
                                                 $attr = array(
                                                     'class' => "form-control form-control-user",
                                                     'placeholder' => 'รหัสผ่าน',
@@ -68,10 +69,10 @@
                                                 );
                                                 echo form_password($attr);
                                             ?>
-										</div>
-										<div class="form-group">
-											<div class="custom-control custom-checkbox small">
-												<?php 
+									</div>
+									<div class="form-group">
+										<div class="custom-control custom-checkbox small">
+											<?php 
                                                     $attr = array(
                                                         'class' => "custom-control-input",
                                                         'placeholder' => 'รหัสผ่าน',
@@ -82,11 +83,11 @@
                                                     );
                                                     echo form_checkbox($attr);
                                                 ?>
-												<label class="custom-control-label" for="customCheck">จดจำไว้ 1
-													วัน</label>
-											</div>
+											<label class="custom-control-label" for="customCheck">จดจำไว้ 1
+												วัน</label>
 										</div>
-										<?php 
+									</div>
+									<?php 
                                             $attr = array(
                                                 'class' => "btn btn-primary btn-user btn-block",
                                                 'name' => "btn-login",
@@ -95,8 +96,18 @@
                                             );
                                             echo form_submit($attr);
                                         ?>
-									
+
 									<hr>
+
+									<?php if ($this->session->flashdata("flash_errors")){?>
+									<div class="alert alert-danger alert-dismissible fade show" role="alert">
+										<?php echo $this->session->flashdata("flash_errors")?>
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<?php } ?>
+
 									<div class="text-center">
 										<a class="small" href="forgot-password.html">Forgot Password?</a>
 									</div>

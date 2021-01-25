@@ -60,7 +60,7 @@ class Amphur_New extends CI_Controller
             }
             $data['provinces'] = $arr;
 
-            $data['method'] = "";
+            $data['method'] = "add";
 
             $data['content'] = 'amphur_new/form';
             $this->load->view('layout/main', $data);
@@ -77,7 +77,7 @@ class Amphur_New extends CI_Controller
             $this->db->insert('amphur', $param);
 
             $this->session->set_flashdata('flash_success', 'ข้อมูลถูกบันทึกแล้ว');
-            redirect(base_url('Amphur_New/add'));
+            redirect(base_url('Amphur_New/add','refresh'));
         }
 
     }
