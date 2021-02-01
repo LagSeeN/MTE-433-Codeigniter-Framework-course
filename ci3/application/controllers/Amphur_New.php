@@ -77,7 +77,7 @@ class Amphur_New extends CI_Controller
             $this->db->insert('amphur', $param);
 
             $this->session->set_flashdata('flash_success', 'ข้อมูลถูกบันทึกแล้ว');
-            redirect(base_url('Amphur_New/add','refresh'));
+            redirect(base_url('Amphur_New/add'));
         }
 
     }
@@ -130,6 +130,21 @@ class Amphur_New extends CI_Controller
 
         $this->session->set_flashdata('flash_success', 'ข้อมูลถูกลบไปแล้วไม่สามารถกู้คืนได้อีก');
         redirect("Amphur_New/index");
+    }
+
+    public function getJson()
+    {
+        $province_id = $this->input->get("province_id");
+        $amphurs = $this->Amphur_model_New->getAll(0, 20000, '', $province_id);
+        $arr = array('--อำเภอ--');
+        if ($province_id == 0) {
+            echo json_encode($arr);
+            return;
+        }
+        foreach ($amphurs as $amphur) {
+            $arr[$amphur->amphur_id] = $amphur->amphur_name;
+        }
+        echo json_encode($arr);
     }
 
 }

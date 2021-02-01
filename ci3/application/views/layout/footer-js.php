@@ -14,3 +14,20 @@
 <!-- Page level custom scripts -->
 <!-- <script src="<?=base_url('assets/')?>js/demo/chart-area-demo.js"></script>
 <script src="<?=base_url('assets/')?>js/demo/chart-pie-demo.js"></script> -->
+
+<script src="<?=base_url('assets/')?>/js/jquery.selectboxes.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#province_id").change(function () {
+			$("#amphur_id").removeOption(/./);
+			$("#amphur_id").ajaxAddOption("<?=base_url('Amphur_New/getJson')?>", {
+					"province_id": $("#province_id").val()
+				}, false,
+				function () {
+					$("#amphur_id").selectOptions("0");
+				});
+		});
+	});
+
+</script>
