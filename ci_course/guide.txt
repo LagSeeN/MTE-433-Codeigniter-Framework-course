@@ -1,0 +1,30 @@
+https://github.com/
+https://git-scm.com/downloads
+labb404
+b404install
+
+git config --global user.name ""
+git config --global user.email ""
+windows
+C:\Windows\System32\drivers\etc\host
+mac
+/etc/host
+
+git config --list
+
+git clone https://github.com/pongpet007/ci_course.git .
+git add .
+git commit -m "commit message"
+git push origin master
+git pull origin master
+git status
+
+git branch
+git branch dev
+git checkout dev
+git checkout -b 8FEB
+
+
+
+
+
