@@ -15,4 +15,11 @@
     	font-size: 35px;
 	}
 
+	a{
+		color:#007bff;
+	}
+	a:hover{
+		color:black;
+	}
+
 </style>

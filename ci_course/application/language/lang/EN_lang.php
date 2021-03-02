@@ -1,9 +1,12 @@
-<?php
-$lang['home'] = 'Home';
-$lang['shop'] = 'Shop';
-$lang['about'] = 'Abount us';
-$lang['contact'] = 'Contact us';
-$lang['popular'] = 'Popular Items';
-$lang['add-to-cart'] = 'Add to cart';
-$lang['view-more-products'] = 'View More Products';
-$lang['quantity'] = 'Quantity';
+<?php 
+
+	$lang['home'] = 'Home';
+	$lang['shop'] = 'Shop';
+	$lang['about'] = 'About us';
+	$lang['contact'] = 'Contact us';
+	$lang['popular'] = 'Popular Items';
+	$lang['addtocart'] = 'Add To Cart';
+	$lang['viewmore'] = 'View More Products';
+	$lang['quantity'] = 'Quantity';
+
+ ?>
